@@ -3,3 +3,33 @@
 - Routing, Pages & Components
 - Fetching & Sending data
 - Styling, Imaages & Metadata
+
+## app
+
+### file convensions
+
+https://nextjs.org/docs/app/api-reference/file-conventions
+
+- `page.js` - define page content
+  - 리액트 서버 컴포넌트를 생성 -> 서버에서 렌더하여 클라이언트에게 보여지게 됨
+- `layout.js` - define wrapper around pages
+  - 하나 또는 그 이상의 페이지를 감싸는 역할
+  - 최소한 app root 에 하나의 layout.js 가 정의되어있어야하고, 폴더 당 중첩을 허용
+  - 즉 뼈대를 잡는 방식으로, 포장지에 가깝다
+  - `metadata` - title, description 등 head 와 관련된 공통 메타데이터 관리
+  - `children` - 현재 활성화된 `page.js` 의 내용
+- `globals.css`
+  - layout 에서 임포트하는 공통적인 스타일
+- `icon.png` - favicon 예약어
+- `not-found.js` - define "Not Found" fallback page
+- `error.js` - define "Error" fallback page
+- `route.js` - API 경로 생성
+
+### Skills
+
+- SPA 방식을 혼용하기
+  - 페이지 첫 접속은 서버렌더링 후 클라이언트가 html 을 그려낸다
+  - 하지만 페이지간 이동이 반드시 필요한 것은 아니며, 서버렌더링 후 클라이언트에서 JS 코드로 UI 만 업데이트한다(SPA)
+- component 는 가급적 app 이외의 디렉토리에 두는 것을 고려. import 에서 root 접근 시, `@` 을 사용함
+- dynamic route
+  - 대괄호를 사용한 문법
