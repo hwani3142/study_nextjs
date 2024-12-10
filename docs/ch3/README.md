@@ -48,3 +48,9 @@ https://nextjs.org/docs/app/api-reference/file-conventions
   - 클라이언트 컴포넌트로 만들고싶다면 -> `use client`
 - ~~강의105 이미지 슬라이드쇼 미동작~~
 - 서버 컴포넌트의 이점을 살리기 위해 컴포넌트 트리 중 가급적 하위에 있는 케이스만 클라이언트 변경을 고려한다
+
+### sqlite
+
+- `npm install better-sqlite3`
+- `node initdb.js`
+- 사용자에 의해 저장될 이미지는 asset 이 아닌 public 폴더에 저장하고, 그 경로를 sqlite 에 저장함
