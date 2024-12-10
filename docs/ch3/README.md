@@ -54,3 +54,18 @@ https://nextjs.org/docs/app/api-reference/file-conventions
 - `npm install better-sqlite3`
 - `node initdb.js`
 - 사용자에 의해 저장될 이미지는 asset 이 아닌 public 폴더에 저장하고, 그 경로를 sqlite 에 저장함
+- methods
+  - all : 결과 row 2개 이상 조회
+  - get : 결과 row 1개 조회
+  - run : 업데이트
+
+### error
+
+- `error.js` 로 처리
+- 클라이언트 사이드에서 처리되도록 강제되었기 때문에 `"use client";` 선언이 필수
+
+### not-found
+
+- `not-found.js` 로 처리
+- 서버사이드에서 처리
+- `notFound()` 함수를 이용해서, 현재 위치에서 가장 가까운 위치의 not-found 정의를 네비게이팅 할 수 있음
