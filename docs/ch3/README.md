@@ -93,3 +93,12 @@ https://nextjs.org/docs/app/api-reference/file-conventions
 - 즉, 사용자는 즉시 완성된 페이지를 보게된다. 이후 사전 렌더링된 페이지들을 캐싱하게된다.
   - 이는 신규 데이터를 fetching 할 수 없는 문제로 빠진다.
 - `revalidatePath(path, 'layout');` - nextjs 가 해당 경로 + 중첩 경로(layout) 속하는 캐시를 유효성 재검사함
+- 배포시점에서 public 디렉토리는 관여하지않음
+
+### metadata
+
+- https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+- layout 혹은 page 에 지정할 수 있으며, 중첩된 경로에 재정의될 경우 재정의된 값으로 사용하게 됨
+- 동적 메타데이터
+  - `export async function generateMetadata({ params })` 을 nextjs 가 인식
+  - 동일하게 params 를 인자로 받아 slug 를 추출하여 사용
