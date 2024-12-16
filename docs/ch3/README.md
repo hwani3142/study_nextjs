@@ -69,3 +69,27 @@ https://nextjs.org/docs/app/api-reference/file-conventions
 - `not-found.js` 로 처리
 - 서버사이드에서 처리
 - `notFound()` 함수를 이용해서, 현재 위치에서 가장 가까운 위치의 not-found 정의를 네비게이팅 할 수 있음
+
+### server action
+
+- form 에서 submit 할 때 보통 서버와 통신하는 방식임
+- nextjs 는 서버기반으로 돌기때문에 굳이 진짜 서버와 통신할 필요 없이 내부적으로 처리
+- `use server;` 는 서버에서 처리될 내용들을 보통 비동기식으로 처리하도록 선언하여, 서버에서 실행되는 비동기 함수.
+
+### libs
+
+- `npm install slugify xss`
+
+### form
+
+- `useFormStatus` - form 태그의 제출에 대한 상태를 얻을 수 있음
+- `useActionState` - form 의 액션 함수와 초기 state 를 전달받아, 폼에서 사용할 새로운 액션을 반환. 폼 액션에 의한 상태를 업데이트하며 관리
+  - action 위치에 두번째 리턴값을 넣어줘야함
+
+### deployment
+
+- `npm run build` -> `npm start`
+- nextjs 빌드 시 사전 렌더링을 통해 모든 페이지를 미리 만들어내기 때문에 동적인 사이트 동작이라 볼 수 없다.
+- 즉, 사용자는 즉시 완성된 페이지를 보게된다. 이후 사전 렌더링된 페이지들을 캐싱하게된다.
+  - 이는 신규 데이터를 fetching 할 수 없는 문제로 빠진다.
+- `revalidatePath(path, 'layout');` - nextjs 가 해당 경로 + 중첩 경로(layout) 속하는 캐시를 유효성 재검사함
