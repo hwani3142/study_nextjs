@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import NewsList from "@/component/header/news-list";
+import NewsList from "@/component/news-list";
 import {
   getAvailableNewsMonths,
   getAvailableNewsYears,
