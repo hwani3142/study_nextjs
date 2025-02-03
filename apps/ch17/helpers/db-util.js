@@ -19,7 +19,6 @@ export async function getAllDocuments(client, collection, sort, filter = {}) {
     .collection(collection)
     .find(filter)
     .sort(sort)
-    //   .sort({ _id: -1 }) // descending
     .toArray();
 
   return documents;
