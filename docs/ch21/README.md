@@ -7,6 +7,10 @@
   - 서버/클라이언트 사이드에서 인증 여부를 확인할 수 있게 함
   - 인증 후 credential 을 만들어서 쿠키 설정하고, 만료를 갱신할 수 있도록 자동화
 
+### v3->v4 업그레이드
+
+- https://next-auth.js.org/getting-started/upgrade-v4#providers
+
 ### 주요
 
 ```js
