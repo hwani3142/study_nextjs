@@ -1,5 +1,5 @@
-import ProfileForm from './profile-form';
-import classes from './user-profile.module.css';
+import ProfileForm from "./profile-form";
+import classes from "./user-profile.module.css";
 
 function UserProfile() {
   // const [isLoading, setIsLoading] = useState(true);
@@ -7,7 +7,7 @@ function UserProfile() {
   // useEffect(() => {
   //   getSession().then((session) => {
   //     if (!session) {
-  //       window.location.href = '/auth';
+  //       window.location.href = "/auth";
   //     } else {
   //       setIsLoading(false);
   //     }
@@ -19,12 +19,12 @@ function UserProfile() {
   // }
 
   async function changePasswordHandler(passwordData) {
-    const response = await fetch('/api/user/change-password', {
-      method: 'PATCH',
+    const response = await fetch("/api/user/change-password", {
+      method: "PATCH",
       body: JSON.stringify(passwordData),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
 
     const data = await response.json();
